@@ -8,6 +8,7 @@ function moveZeroes(nums) {
       idx++;
     }
   }
+  console.log(nums);
 }
 
 moveZeroes([0, 1, 0, 3, 12]);
