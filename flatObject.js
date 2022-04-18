@@ -24,16 +24,16 @@ const details = {
   },
 };
 
-const flattenObjFun = (obj, suffix, flattenObj) => {
+const flattenObjFun = (obj, prefix, flattenObj) => {
   Object.keys(obj).forEach((key) => {
     if (
       typeof obj[key] === "object" &&
       obj[key] !== null &&
       !Array.isArray(obj[key])
     ) {
-      flattenObjFun(obj[key], `${suffix}_${key}`, flattenObj);
+      flattenObjFun(obj[key], `${prefix}_${key}`, flattenObj);
     } else {
-      flattenObj[`${suffix}_${key}`] = obj[key];
+      flattenObj[`${prefix}_${key}`] = obj[key];
     }
   });
 
